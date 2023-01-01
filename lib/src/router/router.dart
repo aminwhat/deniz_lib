@@ -23,6 +23,8 @@ class Router {
     }
   }
 
+  String get initialRoute => routes[0];
+
   Route onGenerateRoute(RouteSettings routeSettings) {
     return GetPageRoute(
       page: () => _matchedScreens[routeSettings.name] ?? pageNotFound,
