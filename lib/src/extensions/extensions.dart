@@ -4,7 +4,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Extensions {
-  Future<void> urlLauncher(String url, {BuildContext? context}) async {
+  static Future<void> urlLauncher(String url, {BuildContext? context}) async {
     final Uri uri = Uri.parse(url);
     if (!await launchUrl(
       uri,
