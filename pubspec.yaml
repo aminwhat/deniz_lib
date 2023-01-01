@@ -4,11 +4,14 @@ version: 1.0.0
 # homepage: https://www.example.com
 
 environment:
-  sdk: '>=2.18.4 <3.0.0'
+  sdk: ">=2.18.4 <3.0.0"
 
-# dependencies:
-#   path: ^1.8.0
+dependencies:
+  path: ^1.8.0
+  device_info_plus: ^8.0.0
 
 dev_dependencies:
   lints: ^2.0.0
   test: ^1.16.0
+  flutter_lints: ^2.0.0
+  change_app_package_name: ^1.1.0
