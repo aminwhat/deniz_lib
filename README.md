@@ -1,9 +1,16 @@
 ## Features
 
+<strong>
+
 DenizDevice
+
 DenizInit
+
 DenizRouter
+
 DenizSockets
+
+</strong>
 
 ## Getting started
 
