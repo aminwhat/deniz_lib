@@ -1,8 +1,6 @@
 import 'dart:io';
 import 'package:device_info_plus/device_info_plus.dart';
 
-typedef DeviceInfo = Map<String, dynamic>;
-
 extension AminAndroidBuildVersion on AndroidBuildVersion {
   Map<String, dynamic> asMap() {
     return {
@@ -30,7 +28,7 @@ extension AminIosUtsname on IosUtsname {
 }
 
 abstract class Device {
-  static Future<DeviceInfo> getDeviceInfo() async {
+  static Future<Map<String, dynamic>> getDeviceInfo() async {
     late final Map<String, dynamic> value;
     DeviceInfoPlugin deviceInfo = DeviceInfoPlugin();
     if (Platform.isAndroid) {
