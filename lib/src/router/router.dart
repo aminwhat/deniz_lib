@@ -13,8 +13,8 @@ class Router {
     required this.routes,
     this.pageNotFound = const PageNotFound(),
     this.initialIndex = 0,
-  })  : assert(initialIndex < routes.length),
-        assert(routes.length != screens.length);
+  })  : assert(initialIndex <= routes.length),
+        assert(routes.length == screens.length);
 
   String get initialRoute => routes[initialIndex];
 
