@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:meta/meta.dart';
 import 'package:socket_io_client/socket_io_client.dart';
 
-class Sockets {
+abstract class Sockets {
   late Socket _socket;
 
   String connectionName = 'Deniz-Sockets';

@@ -29,7 +29,7 @@ extension AminIosUtsname on IosUtsname {
   }
 }
 
-class Device {
+abstract class Device {
   static Future<DeviceInfo> getDeviceInfo() async {
     late final Map<String, dynamic> value;
     DeviceInfoPlugin deviceInfo = DeviceInfoPlugin();

@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:window_manager/window_manager.dart';
 
-class Init {
+abstract class Init {
   static void setMobileVertical() {
     if (Platform.isAndroid || Platform.isIOS) {
       SystemChrome.setPreferredOrientations([
