@@ -3,9 +3,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:socket_io_client/socket_io_client.dart';
 
 abstract class Sockets {
-  late Socket _socket;
+  late Socket theSocket;
 
-  String connectionName = 'Deniz-Sockets';
+  String name = 'Deniz-Sockets';
 
   factory Sockets.on(Sockets readySocket) {
     readySocket.connectSocket();
@@ -22,20 +22,19 @@ abstract class Sockets {
   @protected
   @mustCallSuper
   void onConnect() {
-    _socket.onConnect((data) => log('$connectionName: Connection Established'));
+    theSocket.onConnect((data) => log('$name: Connection Established'));
   }
 
   @protected
   @mustCallSuper
   void onConnectError() {
-    _socket.onConnectError(
-        (data) => log('$connectionName: Connection Error: $data'));
+    theSocket.onConnectError((data) => log('$name: Connection Error: $data'));
   }
 
   @protected
   @mustCallSuper
   void onDisConnect() {
-    _socket.onDisconnect(
-        (data) => log('$connectionName: Socket.IO Server Disconnected'));
+    theSocket
+        .onDisconnect((data) => log('$name: Socket.IO Server Disconnected'));
   }
 }
