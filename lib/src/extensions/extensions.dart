@@ -5,7 +5,7 @@ import 'package:url_launcher/url_launcher.dart';
 
 part 'string.dart';
 
-abstract class Extensions {
+abstract class DenizExtensions {
   static Future<void> urlLauncher(String url, {BuildContext? context}) async {
     final Uri uri = Uri.parse(url);
     if (!await launchUrl(
