@@ -1,6 +1,5 @@
 import 'dart:developer';
 import 'package:flutter/cupertino.dart';
-import 'package:meta/meta.dart';
 import 'package:socket_io_client/socket_io_client.dart';
 
 abstract class Sockets {
