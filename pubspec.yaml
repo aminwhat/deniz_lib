@@ -1,6 +1,6 @@
 name: deniz_lib
 description: A starting point for Dart libraries or applications.
-version: 1.0.0
+version: 0.0.0
 # homepage: https://www.example.com
 
 environment:
@@ -12,7 +12,7 @@ dependencies:
 
   path: ^1.8.0
   device_info_plus: ^8.0.0
-  window_manager: ^0.2.8
+  window_manager: ^0.3.0
   socket_io_client: ^2.0.0
   url_launcher: ^6.1.7
   fluttertoast: ^8.1.1
