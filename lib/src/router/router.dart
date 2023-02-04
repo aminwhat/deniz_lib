@@ -23,10 +23,10 @@ class Router {
     this.transitions,
   })  : assert(initialIndex <= routes.length),
         assert(
-          (pageTransitionType == null)
-              ? transitions != null
-              // ignore: unnecessary_null_comparison
-              : pageTransitionType != null,
+          (pageTransitionType == null) ? transitions != null : true,
+        ),
+        assert(
+          (transitions != null) ? transitions.length == routes.length : true,
         );
 
   String get initialRoute => routes[initialIndex]?.key.toString() ?? '/';
