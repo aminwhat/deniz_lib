@@ -37,4 +37,54 @@ abstract class DenizExtensions {
       }
     }
   }
+
+  static Future<void> emailLauncher(
+    String email,
+    String subject,
+    String body, {
+    BuildContext? context,
+    Function(Uri uri)? onError,
+  }) async {
+    await urlLauncher(
+      'mailto:$email?subject=$subject&body=$body',
+      context: context,
+      onError: onError,
+    );
+  }
+
+  static Future<void> telLauncher(
+    String phoneNumber, {
+    BuildContext? context,
+    Function(Uri uri)? onError,
+  }) async {
+    await urlLauncher(
+      'tel:$phoneNumber',
+      context: context,
+      onError: onError,
+    );
+  }
+
+  static Future<void> smsLauncher(
+    String phoneNumber, {
+    BuildContext? context,
+    Function(Uri uri)? onError,
+  }) async {
+    await urlLauncher(
+      'sms:$phoneNumber',
+      context: context,
+      onError: onError,
+    );
+  }
+
+  static Future<void> fileLauncher(
+    String path, {
+    BuildContext? context,
+    Function(Uri uri)? onError,
+  }) async {
+    await urlLauncher(
+      'file:$path',
+      context: context,
+      onError: onError,
+    );
+  }
 }
