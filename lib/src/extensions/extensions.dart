@@ -6,25 +6,30 @@ import 'package:url_launcher/url_launcher.dart';
 part 'string.dart';
 
 abstract class DenizExtensions {
-  static Future<void> urlLauncher(String url, {BuildContext? context}) async {
+  static Future<void> urlLauncher(
+    String url, {
+    BuildContext? context,
+    Function(Uri uri)? onError,
+  }) async {
     final Uri uri = Uri.parse(url);
     if (!await launchUrl(
       uri,
       mode: LaunchMode.externalApplication,
     )) {
       if (context != null) {
-        Snackbar.show(
-          context,
-          snackBar: SnackBar(
-            content: SnackBar(
-              content: Text('Couldn\'t open $uri'),
-              action: SnackBarAction(
-                label: 'Okay',
-                onPressed: () {},
+        onError?.call(uri) ??
+            Snackbar.show(
+              context,
+              snackBar: SnackBar(
+                content: SnackBar(
+                  content: Text('Couldn\'t open $uri'),
+                  action: SnackBarAction(
+                    label: 'Okay',
+                    onPressed: () {},
+                  ),
+                ),
               ),
-            ),
-          ),
-        );
+            );
       } else {
         Fluttertoast.showToast(
           msg: "Could not open $url ",

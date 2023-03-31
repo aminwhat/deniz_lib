@@ -8,7 +8,7 @@ DenizInit
 
 DenizRouter
 
-DenizSockets
+DenizExtensions
 
 </strong>
 
